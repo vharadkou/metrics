@@ -1,0 +1,9 @@
+<main>
+    <button (click)="generateLow()">generateLow</button>
+    <button (click)="generateMedium()">generateMedium</button>
+    <button (click)="generateHigh()">generateHigh</button>
+    <button (click)="clear()">clear</button>
+    <div *ngFor="let message of messages">
+        <my-message [message]="message"></my-message>
+    </div>
+</main>

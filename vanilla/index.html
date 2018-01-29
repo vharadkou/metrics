@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+
+<body>
+    <div id="app">
+        Hello vanilla
+    </div>
+
+    <button onclick="generateLow()">generateLow</button>
+    <button onclick="generateMedium()">generateMedium</button>
+    <button onclick="generateHigh()">generateHigh</button>
+    <button onclick="clearDOM()">clearDOM</button>
+
+    <div id="messages"></div>
+</body>
+
+<script>
+    const HIGH = 10000;
+    const MEDIUM = 5000;
+    const LOW = 1000;
+
+    let messages = [];
+
+    let messagesElement = document.getElementById('messages');
+
+    function dataGenerator(numberOfRows) {
+        let data = [];
+
+        for (let i = 0; i < numberOfRows; i++) {
+            data.push({ id: i, text: `Message Component ${i}` });
+        }
+
+        return data;
+    }
+
+    function generateLow() {
+        messages = dataGenerator(LOW);
+        appendToDOM();
+    }
+
+    function generateMedium() {
+        messages = dataGenerator(MEDIUM);
+        appendToDOM();
+    }
+
+    function generateHigh() {
+        messages = dataGenerator(HIGH);
+        appendToDOM();
+    }
+
+    function appendToDOM() {
+        for (let i = 0; i < messages.length; i++) {
+            messagesElement.appendChild(document.createTextNode(messages[i].text));
+        }
+    }
+
+    function clearDOM() {
+        messagesElement.innerHTML = [];
+    }
+
+
+</script>
+
+</html>

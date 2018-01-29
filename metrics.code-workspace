@@ -1,0 +1,20 @@
+{
+	"folders": [
+		{
+			"path": "angular"
+		},
+		{
+			"path": "common"
+		},
+		{
+			"path": "react"
+		},
+		{
+			"path": "vue"
+		},
+		{
+			"path": "vanilla"
+		}
+	],
+    "settings": {}
+}

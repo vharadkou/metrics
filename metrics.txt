@@ -1,0 +1,9 @@
+render 1000 components
+render 10000 components
+
+update 1 component
+update 100 components
+update 1000 components
+
+delete 1000 components
+delete 10000 components
