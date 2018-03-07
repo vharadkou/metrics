@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p>{{message.text}}</p>
+    <p>{{message.text}} Vue</p>
   </div>
 </template>
 

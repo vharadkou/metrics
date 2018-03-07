@@ -30,6 +30,30 @@ export class Hello extends React.Component<HelloProps, { messages: Array<Data> }
         this.setState({ messages: dataGenerator(HIGH) });
     }
 
+    public updateOne(): void {
+        this.setState({
+            messages: this.state.messages.map(m => {
+                if (m.id < 100) {
+                    m.text += 'Updated';
+                }
+
+                return m;
+            })
+        });
+    }
+
+    public updateTwo(): void {
+        this.setState({
+            messages: this.state.messages.map(m => {
+                if (m.id < 1000) {
+                    m.text += 'Updated';
+                }
+
+                return m;
+            })
+        });
+    }
+
     public clear(): void {
         this.setState({ messages: [] });
     }
@@ -40,6 +64,8 @@ export class Hello extends React.Component<HelloProps, { messages: Array<Data> }
                 <button onClick={this.generateLow.bind(this)}>generateLow</button>
                 <button onClick={this.generateMedium.bind(this)}>generateMedium</button>
                 <button onClick={this.generateHigh.bind(this)}>generateHigh</button>
+                <button onClick={this.updateOne.bind(this)}>update 100</button>
+                <button onClick={this.updateTwo.bind(this)}>update 1000</button>
                 <button onClick={this.clear.bind(this)}>clear</button>
                 <h1>Hello from {this.props.compiler} and {this.props.framework}!</h1>
                 {this.state.messages.map(m => (
