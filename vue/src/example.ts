@@ -3,7 +3,7 @@ import AppComponent from './app.vue';
 
 // mount
 new Vue({
-    el: '#app',
+    el: '#example',
     render: h => h(AppComponent, {
         props: { propMessage: 'World' }
     })

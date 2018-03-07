@@ -1,9 +1,12 @@
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 module.exports = {
     entry: './src/example.ts',
     output: {
-        path: __dirname,
-        filename: 'build.js'
+        filename: 'bundle.js',
+        path: __dirname + '/build'
     },
+    devtool: 'source-map',
     resolve: {
         alias: {
             vue$: 'vue/dist/vue.esm.js'
@@ -28,5 +31,13 @@ module.exports = {
             }
         ]
     },
-    devtool: 'source-map'
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: './src/index.html'
+        })
+    ],
+    devServer: {
+        contentBase: __dirname + '/build/',
+        port: 9002
+    }
 }
